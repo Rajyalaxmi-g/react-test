@@ -1,0 +1,449 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.navigate{
+  font-family: Roboto,sans-serif;
+}
+
+
+
+
+
+nav>ul>li{
+  list-style-type: none;
+  display:inline-block;
+   font-size: 12px;
+   border-bottom: 0;
+    margin:2px 2px 0 2px;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 0;
+    margin-bottom:0;
+    border-color: black;
+    height: 23px;
+    border-radius: 2px 2px 0 0!important;
+}
+nav>ul>li a{
+
+  color:white;
+  font-size:12px;
+  background-color:grey;
+  padding:4px 7px 0;
+
+
+}
+
+nav {
+  padding-top: 5px ;
+  background-color: #fff;
+  padding-bottom:0;
+}
+
+.navin {
+  display:flex;
+  background: #005a84;
+  padding:10px;
+
+  
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.activeNumberClass {     
+  color:green; 
+}
+input.form-control{
+  margin-top: 0;
+}
+/* .phoneicon {
+  position:absolute; 
+  right:10px;
+  top:10px;
+} */
+
+.basicMain {
+  padding: 0px 10px;
+  overflow-y: auto; 
+  min-height: 250px; 
+  max-height: calc(-208px + 100vh);
+}
+
+.reasonDropdown {
+  width: 49%; 
+  vertical-align: top; 
+  display: inline-block;
+}
+
+
+
+.serviceHeading {
+  border: 1px solid rgb(204, 204, 204); 
+  border-image: none; 
+  height: 40px; color: rgb(255, 255, 255); 
+  padding-top: 20px; 
+  cursor: pointer; 
+  background-color: rgb(0, 90, 132);
+}
+
+.serviceHeadingCheckbox {
+  padding-left: 5px; 
+  vertical-align: top; 
+  display: inline-block; 
+  visibility: visible; 
+  transform: translateY(-50%);
+}
+
+.styleQuoteServices {
+  padding-bottom: 3px;
+}
+
+.styleQuoteServicesPrice {
+  text-align: right;
+}
+
+.styleQuoteServicesdrop {
+  margin-top: -3px;
+  display: flex;
+}
+
+.styleQuoteServicesName {
+  padding-right: 5px;
+  flex: 1 1 0%;
+}
+
+.styleQuoteServices1 {
+  padding: 2px 8px; 
+  font-size: 12px; 
+  font-weight: 600;
+}
+
+.quoteOffer {
+  padding-bottom: 5px;
+}
+
+.quoteOfferHeader {
+  border-color: rgb(0, 90, 132); 
+  padding: 5px; 
+  background-color: rgb(0, 90, 132);
+  font-size: 13px; 
+  display: flex;
+  flex:1 1 0%; 
+  white-space: nowrap; 
+  overflow-x: hidden; 
+  text-overflow: ellipsis;
+}
+
+.quoteOfferHeader span{
+  color: rgb(255, 255, 255);
+}
+
+.quoteLobPlay1 {
+  padding-top: 5px; 
+  padding-right: 10px; 
+  padding-left: 10px;
+}
+
+.quoteLobPlay1Style{
+  font-weight: bold; 
+  margin-bottom: 3px;
+  display: flex; 
+  align-items: baseline;
+}
+
+span.fa.fa-plus{
+  color: rgb(67, 160, 71); 
+  padding-left: 8px; 
+  font-size: 10px;
+}
+
+.rightAlign label {
+  text-align: right;
+  width: 100%;
+}
+.fullWidthInput .row {
+  margin: 5px 1px;
+}
+
+.fullWidthInput select, .fullWidthInput input {
+  width: 100% !important;
+  min-height: 26px;
+  padding: 1px 12px;
+  margin-top: 2px;
+  line-height: 1.4285;
+  color: #555 !important;
+  background-color: #fff !important;
+  border-color: 1px solid #dfdfdf;
+  box-shadow: -1px 1px 1px 0 rgba(50,50,50,.3); 
+  -webkit-box-shadow: -1px 1px 1px 0 rgba(50,50,50,.3); 
+  border-radius: 2px !important;  
+}
+
+.quoteLobPlay1Style i {
+  top: 5px; 
+  color: rgb(0, 119, 188); 
+  font-size: 20px; 
+  margin-right: 6px; 
+  position: relative;
+}
+.quoteLobPlay1Style span {
+  font-weight: bold;
+}
+.serviceHeadingName {
+  padding-left: 5px; 
+  display: inline-block; 
+  transform: translateY(-50%);
+}
+
+.serviceHeading label{
+  text-align: right; 
+  margin-top: 7px;
+}
+
+.serviceHeadingPrice {
+  padding-right: 40px; 
+  padding-left: 5px; 
+  display: block; 
+  float: right; 
+  transform: translateY(-50%);
+}
+
+.serviceHeadingPrice span {
+  background: none; 
+  margin: 0px; 
+  padding: 0px; 
+  border: 0px; 
+  border-image: none; 
+  color: rgb(255, 255, 255);
+}
+.dropdownStyle{
+  border: 1px solid rgb(204, 0, 0); 
+  border-image: none; 
+  color: rgb(0, 0, 0); 
+  overflow-x: hidden; 
+  text-overflow: ellipsis;
+}
+.error {     
+  border: 1px solid red; 
+}
+
+.quoteServices {
+  height: 100%; 
+  margin-right: -9px; 
+  margin-left: -9px;
+}
+.quotehrStyle {
+  border-width: 0px; 
+  margin: 5px 8px; 
+  height: 1px; 
+  background-color: rgb(209, 209, 209);
+}
+
+.quoteServicesHeading {
+  padding-bottom: 3px; 
+  box-shadow: 0px 4px 4px -1px rgba(0,0,0,0.3); 
+  background-color: rgb(245, 245, 245);
+}
+
+.bserviceOne {
+  width: 49%; 
+  vertical-align: top; 
+  display: inline-block;
+}
+
+.bsSelectedOffer {
+  border: 1px solid rgb(204, 204, 204); 
+  border-image: none; 
+  height: 40px; 
+  color: rgb(0, 0, 0); 
+  padding-top: 20px; 
+  cursor: pointer; 
+  background-color: rgb(255, 255, 255);
+}
+
+.selectServicesArea {
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+  margin-left: 10px;
+}
+.serviceArea {
+  width: auto; 
+ 
+  display: block;
+}
+
+.serviceArea {
+  width: auto; 
+ 
+  display: block;
+}
+  
+.styleReason {
+  width: 95%; 
+  padding-left: 5px; 
+  display: inline-block; 
+  transform: none;
+}
+
+h5 {
+  font-weight: bold;
+}
+label, input {
+  font-size: 12px;
+}
+
+span.input-group-text i.fa.fa-mobile {
+  display: inline-block;
+  position: absolute;
+  margin: 0 auto;
+  z-index: 10;
+  margin-top: 10px;
+  cursor: pointer;
+  right: 10px;
+}
+
+span.input-group-text i.fa.fa-phone {
+  display: inline-block;
+  position: absolute;
+  margin: 0 auto;
+  z-index: 10;
+  margin-top: 10px;
+  cursor: pointer;
+  right: 10px;
+  color: orange;
+}
+
+span.input-group-text i.fa.fa-times-circle {
+  display: inline-block;
+  position: absolute;
+  margin: 0 auto;
+  z-index: 10;
+  margin-top: 10px;
+  cursor: pointer;
+  right: 10px;
+  color: red;
+}
+
+.input-group .form-control:focus {
+padding-right: 25px;
+}
+.outerRim {
+  height: calc(-68px + 100vh); 
+  overflow-y: auto;
+  border-top: 5px solid #005a84;
+}
+
+.innerScreen {
+  padding-top: 8px;
+  background-color: rgb(224, 224, 224);
+}
+
+.leftScreen {
+  padding: 0px 10px; 
+  overflow-y: auto; 
+  min-height: 250px; 
+  max-height: calc(-167px + 100vh);
+  margin-top: 1rem;
+}
+
+.leftScreen .innerBox {
+  border: 0px;
+}
+
+.rightScreen {
+  top: -1px; 
+  margin-top: 0px; 
+  margin-right: -5px; 
+  margin-bottom: 0px; 
+  overflow-x: hidden; 
+  box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.15);
+}
+
+.quoteHeader {
+  padding-right: 8px;
+  padding-left: 8px;
+  padding-bottom: 9px; 
+  padding-left: 8px; 
+  font-size: 16px; 
+  font-weight: bold; 
+  box-shadow: 0px 4px 4px -1px rgba(0,0,0,0.3); 
+  background-color: rgb(245, 245, 245);
+}
+.quoteSection {
+  height: 100%; 
+  min-height: 85vh;
+  background: white;
+  margin-top: 6px;
+}
+
+li.offerHeader {
+  color: #428bca;
+  /* background-color: #428bca; */
+  text-align: center;
+  padding: 2px;
+}
+
+li.offerHeader.active {
+  color: #fff;
+  background-color: #428bca;
+}
+.floatleft {
+  float: left;
+  width: 50%;
+  min-width: 300px;
+}
+
+.smallFont {
+  font-size: 12px;
+}
+.selectedOffer{
+  background: white;
+  padding: 0px; 
+  border: 0px; 
+  border-image: none;
+  width: 100%;
+}
+
+.buttonGroupLeft {
+display: block;
+float: left;
+}
+
+.buttonGroupRight {
+  display: block;
+  float: right;
+}
+.buttonGroupLeft .clearOrder {
+  margin-left: 5px; 
+}
+
+.buttonGroupRight .btn-success {
+  margin-left: 5px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
