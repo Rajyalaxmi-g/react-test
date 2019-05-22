@@ -1,14 +1,13 @@
-import React from "react";
+import React from 'react';
 
-class AppComponent extends React.Component{
+class AppComponent extends React.Component {
+	state = {
+		numChildren: 0
+	};
+	// render() {
 
-    state = {
-        numChildren: 0
-    }
-    // render() {
+	//     return(
 
-    //     return(
-
-    //     );
-    // }
+	//     );
+	// }
 }

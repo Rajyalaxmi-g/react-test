@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 // import { Tabs, Tab} from "react-bootstrap";
 // import Dashboard from "../navs/Dashboard";
 // import Account from "../navs/Account";
@@ -6,26 +6,24 @@ import React from "react";
 // import Tools from "../navs/Tools";
 // import Ordering from "../navs/Ordering";
 
+class Nav extends React.Component {
+	// constructor(props, context){
+	//     super(props, context);
+	//     this.state = {
+	//         key: 'Ordering',
+	//     };
+	// }
 
-class Nav extends React.Component{
-
-    // constructor(props, context){
-    //     super(props, context);
-    //     this.state = {
-    //         key: 'Ordering',
-    //     };
-    // }
-
-    render (){
-        return(
-            <div className="navigate">
-               <div className="navin">
-               <button>
-               <span class="fa fa-search">&nbsp;Search</span>
-               </button>
-               <h4>No account selected</h4>
-               </div>
-               {/* <Tabs id="navTabs" activeKey={this.state.key} onSelect={key => this.setState({ key })}>
+	render() {
+		return (
+			<div className="navigate">
+				<div className="navin">
+					<button>
+						<span class="fa fa-search">&nbsp;Search</span>
+					</button>
+					<h4>No account selected</h4>
+				</div>
+				{/* <Tabs id="navTabs" activeKey={this.state.key} onSelect={key => this.setState({ key })}>
                     <Tab eventkey="Dashboard" title="Dashboard">
                         <Dashboard />
                     </Tab>
@@ -44,30 +42,31 @@ class Nav extends React.Component{
                     
                </Tabs>  */}
 
+				<nav>
+					<ul>
+						<li>
+							{' '}
+							<a href="#">Dashboard</a>
+						</li>
 
+						<li>
+							<a href="#">Account</a>
+						</li>
+						<li>
+							<a href="#">Billing</a>
+						</li>
 
+						<li>
+							<a href="#">Ordering</a>
+						</li>
 
-
-
-                <nav>
-                    <ul>
-                        <li> <a href="#">Dashboard</a></li>
-                   
-                       
-                        <li><a href="#">Account</a></li>
-                        <li><a href="#">Billing</a></li>
-                        
-                        <li><a href="#">Ordering</a></li>
-                      
-                      
-                        <li><a href="#">Tools</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-        );
-    }
-
-
+						<li>
+							<a href="#">Tools</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		);
+	}
 }
 export default Nav;

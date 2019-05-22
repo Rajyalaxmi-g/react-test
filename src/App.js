@@ -1,4 +1,6 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
+import { simpleAction } from './actions/simpleAction';
+import { bindActionCreators } from 'redux';
 //import logo from './logo.svg';
 import './App.scss';
 import './bs.css';
@@ -6,22 +8,37 @@ import './bs.css';
 //import Form from './component/Form';
 import OfferSelection from './component/OfferSelection';
 //import BasicServices from './component/BasicServices';
-import  Nav from "./component/Nav";
+import Nav from './component/Nav';
+import { connect } from 'react-redux';
 //import BasicServicesDemo from './component/BasicServicesDemo';
 
-class App extends Component{
-  render(){
-    return (
-      <div>
-        <Nav />
-        
-        <OfferSelection />
+class App extends Component {
+	simpleAction = (event) => {
+		this.props.simpleAction(`this is a dynamic result: user is - Timestamp is: ${Date.now()}`);
+	}
 
-             
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div>
+				<Nav />
+				<OfferSelection />
+				<button onClick={this.simpleAction}>Test redux action</button>
+				<pre>
+					{
+						JSON.stringify(this.props)
+					}
+				</pre>
+			</div>
+		);
+	}
 }
 
+const mapStateToProps = state => ({
+	...state
+})
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+	simpleAction: bindActionCreators(simpleAction, dispatch)
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
