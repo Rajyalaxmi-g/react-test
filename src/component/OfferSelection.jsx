@@ -5,7 +5,9 @@ import RedX from "../assets/images/red-x.png";
 import ReactTooltip from "react-tooltip";
 import Tooltip from "@material-ui/core/Tooltip";
 import Table from "./Table";
-import BasicServicesDemo from './BasicServicesDemo';
+import BasicServicesDemo from "./basicServices/BasicServicesDemo";
+import Quote from "./Quote";
+import ExpandCollapse from "./basicServices/ExpandCollapse";
 //import "react-checkbox-tree/lib/react-checkbox-tree.css";
 //import CheckboxTree from "react-checkbox-tree";
 
@@ -104,7 +106,8 @@ class OfferSelection extends React.Component {
           showCart: true
         }
       ],
-      selectedOffers: [{
+      selectedOffers: [
+        {
         id: 4,
         type: "Promotional",
         offerName: "TV Select + Internet (44/44) SPP 2.0 #2748993 NC",
@@ -118,61 +121,63 @@ class OfferSelection extends React.Component {
               label: "Broadcast TV Surcharge",
               price: "$11.99"
           },
-          services: {
-              spectrumTV: {
+          services: [
+              {
                   label: "Spectrum TV",
                   price: "$0.00",
                   default: true,
-                  children: {
-                      spectrumTVSelect: {
+                  children: [
+                      {
                           label: "Spectrum TV Select",
                           price: "$44.99",
                           default: true,
-                          children: {
-                              spectrumTVSilver: {
+                          children: [
+                              {
                                   label: "Spectrum TV Silver",
                                   price: "$20.00",
-                                  children: {
-                                      spectrumTVGold: {
+                                  children: [
+                                      {
                                           label: "Spectrum TV Gold",
                                           price: "$20.00"
                                       }
-                                  }
+                                    ]
                               }
-                          }
+                            ]
                       }
-                  }
+                    ]
               }
-          }
+            ]
       },
       {
           serviceName: "Spectrum Internet",
           price: "$44.99",
-          services: {
-              spectrumInternet: {
+          services: [
+              {
                   label: "Spectrum Internet",
                   price: "$44.99",
                   default: true, 
-                  children: {
-                      spectrumInternetPlus: {
+                  children: [
+                      {
                           label: "Spectrum Internet Plus",
                           price: "$0.00",
                           default: true
                       },
-                      spectrumInternetUltra: {
+                      {
                           label: "Spectrum Internet Ultra",
                           price: "$20.00",
                       },
-                      spectrumInternetGig: {
+                      {
                           label: "Spectrum Internet Gig",
                           price: "$60.00",
                       }
-                  }
+                    ]
               }
-          }
-      }]
+            ]
+      }
+    ]
       
-      }],
+      }
+    ],
       doublePlay: [
         {
           id: 4,
@@ -864,8 +869,8 @@ class OfferSelection extends React.Component {
   basicServices = () => {
     return (
       <div>
-        
-        <div className="selectedOffer">
+        <ExpandCollapse />
+        <div className="scrollGroup">
           <div className="form-group">
             
             <BasicServicesDemo selectedOffers={this.state.selectedOffers}/>
@@ -885,7 +890,7 @@ class OfferSelection extends React.Component {
                 <input type="text" value={localStorage.getItem("hostPhone")} />
               </div>
             <Table />
-            </div>
+            </div> 
           </div>
         </div>
 
@@ -999,7 +1004,8 @@ class OfferSelection extends React.Component {
                 </div>
                 <div className="quoteSection row">
                   <div className="row">
-                    <table className="table-striped-manual table">
+                    <Quote />
+                    {/* <table className="table-striped-manual table">
                       {/* <tbody>
                         {this.state.selectedOffers.map(
                           offer => {
@@ -1012,8 +1018,8 @@ class OfferSelection extends React.Component {
                             );
                           }
                         )}
-                      </tbody> */}
-                    </table>
+                      </tbody> 
+                    </table> */}
                   </div>
                 </div>
               </div>

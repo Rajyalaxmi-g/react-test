@@ -1,29 +1,35 @@
 import React from "react";
 
-export default class OfferParent extends React.Component {
+// export default class OfferParent extends React.Component {
+    export default function OfferParent({label, price, isDefault}){
 
-    render(){
+    
         return(
 
-            <div className="spParent">
-                <div className="spVHeaderIcon"><span className="fa fa-minus-square-o fa-lg"></span></div>
-                <div className="spVHeaderLabel">
-                    <div className="form-group">
-                    <div className="formGroupStyle">
-                        <div className="checkboxStyle">
-                            <span>
-                                <input className="checkboxIcon" type="checkbox" disabled value="Spectrum TV" />
-                                <span className="checkboxLabel">Spectrum TV</span>
-                            </span>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div className="spVHeaderPrice">
-                    <span className="spVHeaderChildPriceStyle">$0.00</span>
-                </div>
-            </div>
+            <div class="spParent">
+					<div class="spVHeaderIcon">
+						<span class="fa fa-minus-square-o fa-lg" />
+					</div>
+					<div class="spVHeaderLabel">
+						<div class="form-group">
+							<div class="formGroupStyle">
+								<div class="checkboxStyle">
+									<span>
+										<input class="checkboxIcon" type="checkbox" disabled={isDefault} value="Spectrum TV" />
+										<span class="checkboxLabel">{label}</span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="spVHeaderPrice">
+						<span class="spVHeaderChildPriceStyle">{price}</span>
+					</div>
+				</div>
         )
 
-        }
+        
 }
+
+
+

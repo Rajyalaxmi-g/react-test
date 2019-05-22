@@ -1,7 +1,5 @@
 import React from 'react';
-import { Container} from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 
 const Table = () => {
     return(
@@ -100,18 +98,64 @@ const Table = () => {
                 <Row>
                 <Col xs={12} md={6}>
                     <Col xs={12} md={6}>
-                        <label>* Emergency Install</label>
+                        <label>* LEC Freeze</label>
                     </Col>
                     <Col xs={12} md={6}>
                         <select>
-                            <option value="No" selected="selected">No</option>
-                            <option value="Yes">Yes</option>
+                            <option value="LEC Freeze No" selected="selected">LEC Freeze No</option>
+                            <option value="LEC Freeze Yes">LEC Freeze Yes</option>
                         </select>
                     </Col>
                 </Col>
                 <Col xs={12} md={6}>
                     <Col xs={12} md={6}>
-                        <label>* LEC Account PIN</label>
+                        <label>* LOA</label>
+                    </Col>
+                    <Col xs={12} md={6}>
+                    <select>
+                            <option value="Not Required" selected="selected">Not Required</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </Col>
+                </Col>
+                </Row>
+                <Row>
+                <Col xs={12} md={6}>
+                    <Col xs={12} md={6}>
+                        <label>* Partial Port</label>
+                    </Col>
+                    <Col xs={12} md={6}>
+                        <select>
+                            <option value="Port All Lines" selected="selected">Port All Lines</option>
+                            <option value="Disconnect">Disconnect</option>
+                            <option value="partial Port">Partial Port</option>
+                        </select>
+                    </Col>
+                </Col>
+                <Col xs={12} md={6}>
+                    <Col xs={12} md={6}>
+                        <label>* Port-InLEC</label>
+                    </Col>
+                    <Col xs={12} md={6}>
+                        <input type="text" disabled value="Charter_Fiber-TNS:5606/" />
+                    </Col>
+                </Col>
+                </Row>
+                <Row>
+                <Col xs={12} md={6}>
+                    <Col xs={12} md={6}>
+                        <label>* Port-In Address/Name Mismatch</label>
+                    </Col>
+                    <Col xs={12} md={6}>
+                        <select>
+                            <option value="Yes" selected="selected">Yes</option>
+                            
+                        </select>
+                    </Col>
+                </Col>
+                <Col xs={12} md={6}>
+                    <Col xs={12} md={6}>
+                        <label>* Port-In LEC Account Number</label>
                     </Col>
                     <Col xs={12} md={6}>
                         <input type="text" disabled value="None" />
@@ -121,87 +165,25 @@ const Table = () => {
                 <Row>
                 <Col xs={12} md={6}>
                     <Col xs={12} md={6}>
-                        <label>* Emergency Install</label>
+                        <label>Porting Ind</label>
                     </Col>
                     <Col xs={12} md={6}>
                         <select>
-                            <option value="No" selected="selected">No</option>
-                            <option value="Yes">Yes</option>
+                            <option value="No" disabled selected="selected">No</option>
+                            
                         </select>
                     </Col>
                 </Col>
                 <Col xs={12} md={6}>
                     <Col xs={12} md={6}>
-                        <label>* LEC Account PIN</label>
+                        <label>* Telephone Number</label>
                     </Col>
                     <Col xs={12} md={6}>
-                        <input type="text" disabled value="None" />
+                        <input type="text" disabled value="one click number" />
                     </Col>
                 </Col>
                 </Row>
-                <Row>
-                <Col xs={12} md={6}>
-                    <Col xs={12} md={6}>
-                        <label>* Emergency Install</label>
-                    </Col>
-                    <Col xs={12} md={6}>
-                        <select>
-                            <option value="No" selected="selected">No</option>
-                            <option value="Yes">Yes</option>
-                        </select>
-                    </Col>
-                </Col>
-                <Col xs={12} md={6}>
-                    <Col xs={12} md={6}>
-                        <label>* LEC Account PIN</label>
-                    </Col>
-                    <Col xs={12} md={6}>
-                        <input type="text" disabled value="None" />
-                    </Col>
-                </Col>
-                </Row>
-                <Row>
-                <Col xs={12} md={6}>
-                    <Col xs={12} md={6}>
-                        <label>* Emergency Install</label>
-                    </Col>
-                    <Col xs={12} md={6}>
-                        <select>
-                            <option value="No" selected="selected">No</option>
-                            <option value="Yes">Yes</option>
-                        </select>
-                    </Col>
-                </Col>
-                <Col xs={12} md={6}>
-                    <Col xs={12} md={6}>
-                        <label>* LEC Account PIN</label>
-                    </Col>
-                    <Col xs={12} md={6}>
-                        <input type="text" disabled value="None" />
-                    </Col>
-                </Col>
-                </Row>
-                <Row>
-                <Col xs={12} md={6}>
-                    <Col xs={12} md={6}>
-                        <label>* Emergency Install</label>
-                    </Col>
-                    <Col xs={12} md={6}>
-                        <select>
-                            <option value="No" selected="selected">No</option>
-                            <option value="Yes">Yes</option>
-                        </select>
-                    </Col>
-                </Col>
-                <Col xs={12} md={6}>
-                    <Col xs={12} md={6}>
-                        <label>* LEC Account PIN</label>
-                    </Col>
-                    <Col xs={12} md={6}>
-                        <input type="text" disabled value="None" />
-                    </Col>
-                </Col>
-                </Row>
+                
             </Container>
         </div> 
     )

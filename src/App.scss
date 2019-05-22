@@ -12,7 +12,16 @@
   font-family: Roboto,sans-serif;
 }
 
+.scrollGroup {
+  padding: 0px 10px; 
+  overflow-y: auto; 
+  min-height: 250px; 
+  max-height: calc(-265px + 100vh);
+}
 
+.panel-default {
+  border: 0px solid #fff;
+}
 
 
 
@@ -93,7 +102,32 @@ input.form-control{
   display: inline-block;
 }
 
+.display {
+  display: inline-block;
+}
 
+.display label {
+  text-align: right; 
+  margin-top: 7px;
+}
+
+.displayDropdown {
+  padding-left: 5px; 
+  display: inline-block;
+}
+
+.dropdownWidth {
+  width: 608px; 
+  margin-left: 10px;
+}
+
+.formReasonStyle {
+  width: 200%; 
+  display: inline-block;
+}
+.multiselectComponent{
+  width: 80%;
+}
 
 .serviceHeading {
   border: 1px solid rgb(204, 204, 204); 
@@ -136,35 +170,19 @@ input.form-control{
   font-weight: 600;
 }
 
-.quoteOffer {
-  padding-bottom: 5px;
-}
 
-.quoteOfferHeader {
-  border-color: rgb(0, 90, 132); 
-  padding: 5px; 
-  background-color: rgb(0, 90, 132);
-  font-size: 13px; 
-  display: flex;
-  flex:1 1 0%; 
-  white-space: nowrap; 
-  overflow-x: hidden; 
-  text-overflow: ellipsis;
-}
+
+
 
 .quoteOfferHeader span{
   color: rgb(255, 255, 255);
 }
 
-.quoteLobPlay1 {
-  padding-top: 5px; 
-  padding-right: 10px; 
-  padding-left: 10px;
-}
+
 
 .quoteLobPlay1Style{
-  font-weight: bold; 
-  margin-bottom: 3px;
+  
+  
   display: flex; 
   align-items: baseline;
 }
@@ -302,6 +320,7 @@ span.fa.fa-plus{
   display: inline-block; 
   transform: none;
 }
+
 
 h5 {
   font-weight: bold;

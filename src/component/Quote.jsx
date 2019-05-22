@@ -1,4 +1,6 @@
 import React from "react";
+import QuoteOfferHeader from "./quote/QuoteOfferHeader";
+import QuoteOfferVideo from "./quote/QuoteOfferVideo";
 
 class Quote extends React.Component{
     render(){
@@ -30,32 +32,10 @@ class Quote extends React.Component{
                             <div className="quoteOffer">
                                 <div className="row">
                                     <div className="col-xs-12">
-                                        <div className="quoteOfferHeader">
-                                        <span>TV Select + Internet (44/44) SPP 2.0 #2748993 NC </span>
-                                        </div>
+                                        <QuoteOfferHeader />
                                         <div className="quoteLobPlay1">
-                                            <div className="row quoteLobPlay1Style">
-                                                <div className="col-xs-12 ">
-                                                    <div className="style flex:1 1 0%">
-                                                        <i className="material-icons__material-icons___2FaZp">live_tv</i>
-                                                        <span>Spectrum Video</span>
-                                                    </div>
-                                                    <span>$56.98</span>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="row">
-                                                    <div className="col-xs-12" id="style=idsplay: flex; align-items: baseline;">
-                                                        <div className="flex:1 1 0%;">
-                                                            <span className="fa fa-plus"></span>
-                                                            <span className="padding-left: 12px;">Spectrum TV Select</span>
-                                                        </div>
-                                                        <div className="text-align: right;">
-                                                            <span >$44.99</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <QuoteOfferVideo />
+                                            
                                             <div>
                                                 <div className="row">
                                                 <div className="col-xs-12" id="style=idsplay: flex; align-items: baseline;">
@@ -81,7 +61,9 @@ class Quote extends React.Component{
                                         </div>
                                     </div>
                                 </div>
-                                <div className="row"></div>
+                                <div className="row">
+                                    <QuoteOfferHeader />
+                                </div>
                             </div>
                         </div>
                     </div>
