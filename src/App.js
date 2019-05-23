@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { simpleAction } from './actions/simpleAction';
+import { updateQuoteAction } from './actions/updateQuoteAction';
 import { bindActionCreators } from 'redux';
 //import logo from './logo.svg';
-import './App.scss';
-import './bs.css';
+import './assets/styles/App.scss';
+import './assets/styles/bs.css';
 //import FormContainer from './containers/FormContainer';
 //import Form from './component/Form';
 import OfferSelection from './component/OfferSelection';
@@ -18,16 +19,12 @@ class App extends Component {
 	}
 
 	render() {
+		console.log(this.props);
+
 		return (
 			<div>
 				<Nav />
-				<OfferSelection />
-				<button onClick={this.simpleAction}>Test redux action</button>
-				<pre>
-					{
-						JSON.stringify(this.props)
-					}
-				</pre>
+				<OfferSelection updateQuote={this.props.updateQuoteAction} />
 			</div>
 		);
 	}
@@ -38,7 +35,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-	simpleAction: bindActionCreators(simpleAction, dispatch)
+	simpleAction: bindActionCreators(simpleAction, dispatch),
+	updateQuoteAction: bindActionCreators(updateQuoteAction, dispatch)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

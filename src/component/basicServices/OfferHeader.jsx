@@ -1,8 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class OfferHeader extends React.Component {
+	
 	render() {
-		console.log(this.props.service);
+		const { selectedItems } = this.props.quote;
+		
+		const serviceName = this.props.service && this.props.service.serviceName;
+		const price = this.props.service && this.props.service.price;
+		
+		let computedPrice = Number(price.slice(1));
+		let shouldUpdatePrice;
+
+		selectedItems.map(item => {
+			const itemArr = item.split("-");
+			shouldUpdatePrice = itemArr.includes(serviceName);	
+			if (shouldUpdatePrice) computedPrice = computedPrice + Number(itemArr[2].slice(1));
+		})		
+
 		return (
 			<div className="spVHeader">
 				<div className="spVHeaderIcon">
@@ -16,10 +31,16 @@ class OfferHeader extends React.Component {
 					</div>
 				</div>
 				<div className="spVHeaderPrice">
-					<span className="spVHeaderParentPriceStyle">{this.props.service && this.props.service.price}</span>
+					<span className="spVHeaderParentPriceStyle">${computedPrice.toFixed(2)}</span>
 				</div>
 			</div>
 		);
 	}
 }
-export default OfferHeader;
+
+const mapStateToProps = state => ({
+	...state
+});
+
+export default connect(mapStateToProps, null)(OfferHeader);
+

@@ -18,7 +18,7 @@ class BasicServicesDemo extends React.Component {
 						return (
 							<>
 								{/* <SelectedOffer offer={offer} /> */}
-								<OfferDetails offer={offer} />
+								<OfferDetails updateQuote={this.props.updateQuote} offer={offer} />
 							</>
 						);
 					})}
@@ -26,11 +26,11 @@ class BasicServicesDemo extends React.Component {
 				{/* <div className="spVideoInternet">
 				
 				</div> */}
-				<div className="quoteSection row">
+				{/* <div className="quoteSection row">
 					<div className="row">
 						<Quote />
 					</div>
-				</div>
+				</div> */}
 			</div>
 			
 		);
