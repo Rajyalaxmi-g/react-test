@@ -5,10 +5,11 @@ import OfferChildSection from './OfferChildSection';
 import SelectedOffer from './SelectedOffer';
 import OfferParent from './OfferParent';
 
+
 export default function OfferDetails(props) {
 	console.log('props>offer = ', props.offer);
 	return (
-		<div>
+		<div className="spVideoInternet">
 			<div className="spSelectedOffer">
 				<div className="spVHeaderIcon">
 					<span className="fa fa-minus-square-o fa-lg" />

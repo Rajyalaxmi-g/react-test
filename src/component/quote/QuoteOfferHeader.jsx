@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function quoteOfferHeader() {
+export default function quoteOfferHeader(props) {
 	return (
 		<div className="quoteOfferHeader">
 			<div className="quoteOfferHeaderStyle">

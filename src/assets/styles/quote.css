@@ -1,0 +1,74 @@
+.quoteOffer {
+	padding-bottom: 5px;
+}
+
+.quoteOfferHeader {
+	border-color: rgb(0, 90, 132);
+	padding: 5px;
+	background-color: rgb(0, 90, 132);
+}
+
+.quoteOfferHeaderStyle {
+	font-size: 13px;
+	display: flex;
+}
+
+.quoteOfferHeaderDivStyle {
+	flex: 1 1 0%;
+	white-space: nowrap;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+}
+
+.quoteOfferHeaderDivStyle span {
+	color: rgb(255, 255, 255);
+}
+
+.quoteLobPlay1 {
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.quoteLobPlay1Style {
+	font-weight: bold;
+	margin-bottom: 3px;
+}
+
+.lobPlay1DivStyle {
+	display: flex;
+	align-items: baseline;
+	margin-bottom: 10px;
+	
+}
+
+.lobplayLabel {
+	flex: 1 1 0%;
+	max-width: 200px;
+	float: left;
+}
+
+.lobplayLabel span {
+	font-weight: bold;
+
+}
+
+.lobplayLabel .iconStyle {
+	color: rgb(67, 160, 71);
+	padding-left: 8px;
+	font-size: 10px;
+}
+
+.lobplayLabel .labelStyle {
+	padding-left: 12px;
+}
+
+.lobplayPrice {
+	text-align: right;
+}
+hr {
+	border-width: 0px;
+	margin: 5px 0px 2px;
+	height: 1px;
+	background-color: rgb(209, 209, 209);
+}

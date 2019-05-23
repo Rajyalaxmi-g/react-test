@@ -5,13 +5,15 @@ import OfferDetails from './OfferDetails';
 //import OfferInnerChild from "./OfferInnerChild";
 import OrderReason from './OrderReason';
 import SelectedOffer from './SelectedOffer';
+import Quote from "../quote/Quote";
+
 
 class BasicServicesDemo extends React.Component {
 	render() {
 		return (
 			<div>
 				<OrderReason />
-				<div className="spVideoInternet">
+				{/* <div className="spVideoInternet"> */}
 					{this.props.selectedOffers.map(offer => {
 						return (
 							<>
@@ -20,9 +22,17 @@ class BasicServicesDemo extends React.Component {
 							</>
 						);
 					})}
+				{/* </div> */}
+				{/* <div className="spVideoInternet">
+				
+				</div> */}
+				<div className="quoteSection row">
+					<div className="row">
+						<Quote />
+					</div>
 				</div>
-				<div className="spVideoInternet" />
 			</div>
+			
 		);
 	}
 }

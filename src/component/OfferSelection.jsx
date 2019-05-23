@@ -4,9 +4,9 @@ import Green_Checkmark from '../assets/images/Green-Checkmark.png';
 import RedX from '../assets/images/red-x.png';
 import ReactTooltip from 'react-tooltip';
 import Tooltip from '@material-ui/core/Tooltip';
-import Table from './Table';
+import Table from './basicServices/Table';
 import BasicServicesDemo from './basicServices/BasicServicesDemo';
-import Quote from './Quote';
+import Quote from './quote/Quote';
 import ExpandCollapse from './basicServices/ExpandCollapse';
 //import "react-checkbox-tree/lib/react-checkbox-tree.css";
 //import CheckboxTree from "react-checkbox-tree";
@@ -182,7 +182,27 @@ class OfferSelection extends React.Component {
 							]
 						}
 					]
+				},
+				{
+					id: 9,
+					type: 'AddOn',
+					offerName: 'Voice Bundled (9) SPP 2.0 #2755393 NC',
+					price: '$9.99',
+					showCart: true,
+					basicServices: [
+						{
+							serviceName: 'Spectrum Voice',
+							price: '$9.99',
+							services: [
+								{
+									label: 'Spectrum Voice Primary Line',
+									price: '$9.99',
+								}
+							]
+						}
+					]
 				}
+
 			],
 			doublePlay: [
 				{
@@ -1000,28 +1020,11 @@ class OfferSelection extends React.Component {
 								</div>
 							</div>
 							<div className="rightScreen tab-col col-sm-3 col-xs-12">
-								<div className="quoteHeader row">
-									<span>Quote Summary</span>
-								</div>
-								<div className="quoteSection row">
-									<div className="row">
-										<Quote />
-										{/* <table className="table-striped-manual table">
-                      {/* <tbody>
-                        {this.state.selectedOffers.map(
-                          offer => {
-                            return (
-                              <tr key={offer.id}>
-
-                                <td>{offer.offerName}</td>
-                                <td>{offer.price}</td>
-                              </tr>
-                            );
-                          }
-                        )}
-                      </tbody> 
-                    </table> */}
+								<div className="quoteDiv">
+									<div className="quoteHeader row">
+										<span>Quote Summary</span>
 									</div>
+									
 								</div>
 							</div>
 						</div>

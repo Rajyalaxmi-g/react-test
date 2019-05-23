@@ -6,14 +6,14 @@ export default function quoteOfferVideo() {
 			<div className="row quoteLobPlay1Style">
 				<div className="col-xs-12 lobPlay1DivStyle">
 					<div className="lobplayLabel">
-						<i className="material-icons__material-icons___2FaZp">live_tv</i>
+						{/* <i className="material-icons__material-icons___2FaZp">live_tv</i> */}
 						<span>Spectrum Video</span>
 					</div>
 					<span>$56.98</span>
 				</div>
 			</div>
 			<div>
-				<div className="row">
+				{/* <div className="row"> */}
 					<div className="col-xs-12 lobPlay1DivStyle">
 						<div className="lobplayLabel">
 							<span className="fa fa-plus iconStyle" />
@@ -23,7 +23,7 @@ export default function quoteOfferVideo() {
 							<span>$44.99</span>
 						</div>
 					</div>
-				</div>
+				{/* </div> */}
 			</div>
 			<div />
 

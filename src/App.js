@@ -8,7 +8,7 @@ import './bs.css';
 //import Form from './component/Form';
 import OfferSelection from './component/OfferSelection';
 //import BasicServices from './component/BasicServices';
-import Nav from './component/Nav';
+import Nav from './navs/Nav';
 import { connect } from 'react-redux';
 //import BasicServicesDemo from './component/BasicServicesDemo';
 
