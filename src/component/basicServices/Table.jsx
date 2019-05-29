@@ -1,9 +1,25 @@
 import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 
-const Table = () => {
+
+
+const Table = (props) => {
+	// const bgcolor = {
+	// 	backgroundColor : "#7cb30f"
+	// };
+	
 	return (
 		<div>
+			{/* <div>
+				<button onClick={this.showPhoneNumber}>One Click Host</button>
+
+				{
+					<div>
+						Host Phone: {this.state.number}
+						{localStorage.setItem('hostPhone', this.state.number)}
+					</div>
+				}
+			</div> */}
 			<Container fluid className="rightAlign fullWidthInput">
 				<Row>
 					<Col xs={12} md={6}>
@@ -67,7 +83,7 @@ const Table = () => {
 							<label>* Caller ID Name</label>
 						</Col>
 						<Col xs={12} md={6}>
-							<input type="text" disabled value="Maddela" />
+							<input type="text" disabled value={localStorage.getItem('fullName')} />
 						</Col>
 					</Col>
 					<Col xs={12} md={6}>
@@ -199,7 +215,9 @@ const Table = () => {
 							<label>* Telephone Number</label>
 						</Col>
 						<Col xs={12} md={6}>
-							<input type="text" disabled value="one click number" />
+							<input type="text" disabled 
+						
+							value={localStorage.getItem('hostPhone')} />
 						</Col>
 					</Col>
 				</Row>

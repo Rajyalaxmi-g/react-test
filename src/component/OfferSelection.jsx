@@ -18,6 +18,7 @@ import ExpandCollapse from './basicServices/ExpandCollapse';
 //     children: [
 //       { value: "phobos", label: "Phobos" },
 //       { value: "deimos", label: "Deimos" }
+
 //     ]
 //   }
 // ];
@@ -42,6 +43,7 @@ class OfferSelection extends React.Component {
 			invalidNo: false,
 			errors: {},
 			tooltiptext: '',
+			orderReason: '',
 			phonesArray: [
 				{
 					id: 1,
@@ -402,15 +404,15 @@ class OfferSelection extends React.Component {
 	};
 
 	canBeSubmitted = () => {
-		// const errors = this.Validate(
-		//   this.state.firstname,
-		//   this.state.lastname,
-		//   this.state.primaryphone
-		// );
-		// const isDisabled = Object.keys(errors).some(x => errors[x]);
-		// return !isDisabled;
+		const errors = this.Validate(
+		  this.state.firstname,
+		  this.state.lastname,
+		  this.state.primaryphone,
+		
+		);
+		const isDisabled = Object.keys(errors).some(x => errors[x]);
+		return !isDisabled;
 	};
-
 	offerHeader = () => {
 		return (
 			<div id="offer-selection">
@@ -821,8 +823,11 @@ class OfferSelection extends React.Component {
 			</div>
 		);
 	};
-
-	basicServices = () => {		
+	
+	basicServices = () => {	
+		const bgcolor = {
+			backgroundColor : "#7cb30f"
+		};	
 		return (
 			<div>
 				<ExpandCollapse />
@@ -832,21 +837,23 @@ class OfferSelection extends React.Component {
 
 						<div>
 							<div>
-								<button onClick={this.showPhoneNumber}>One Click Host</button>
-
+								
 								{
 									<div>
 										Host Phone: {this.state.number}
+										<button style={bgcolor} onClick={this.showPhoneNumber}>One Click Host</button>
+
 										{localStorage.setItem('hostPhone', this.state.number)}
 									</div>
 								}
+
 							</div>
-							<div>
+							{/* <div>
 								<input type="text" disabled value={localStorage.getItem('fullName')} />
 							</div>
 							<div>
 								<input type="text" value={localStorage.getItem('hostPhone')} />
-							</div>
+							</div>  */}
 							<Table />
 						</div>
 					</div>
@@ -891,7 +898,7 @@ class OfferSelection extends React.Component {
 	render() {
 		console.log('state :', this.state);
 		return (
-			<div className="outerRim tab-content container-fluid tabsContent">
+			// <div className="outerRim tab-content container-fluid tabsContent">
 				<div className="innerScreen tab-pane active" role="tabpanel">
 					<div className="container-fluid">
 						<div className="tab-row-height row">
@@ -953,13 +960,17 @@ class OfferSelection extends React.Component {
 									<div className="quoteHeader row">
 										<span>Quote Summary</span>
 									</div>
-									
+									{/* <div className="quoteSection row">
+					<div className="row">
+						<Quote />
+					</div>
+				</div> */}
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			// </div>
 		);
 	}
 }

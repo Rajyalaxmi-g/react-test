@@ -16,34 +16,34 @@ class Nav extends React.Component {
 
 	render() {
 		return (
-			<div className="navigate">
-				<div className="navin">
-					<button>
-						<span class="fa fa-search">&nbsp;Search</span>
-					</button>
-					<h4>No account selected</h4>
-				</div>
-				{/* <Tabs id="navTabs" activeKey={this.state.key} onSelect={key => this.setState({ key })}>
-                    <Tab eventkey="Dashboard" title="Dashboard">
-                        <Dashboard />
-                    </Tab>
-                    <Tab eventKey="Billing" title="Billing">
-                        <Billing />
-                    </Tab>
-                    <Tab eventKey="Account" title="Account">
-                        <Account />
-                    </Tab>
-                    <Tab eventkey="Ordering" title="Ordering">
-                        <Ordering />
-                    </Tab>
-                    <Tab eventKey="Tools" title='Tools'>
-                        <Tools />
-                    </Tab>
+			 
+			// 	{/* <div className="navin">
+			// 		<button>
+			// 			<span class="fa fa-search">&nbsp;Search</span>
+			// 		</button>
+			// 		<h4>No account selected</h4>
+			// 	</div> */}
+			// 	{/* <Tabs id="navTabs" activeKey={this.state.key} onSelect={key => this.setState({ key })}>
+            //         <Tab eventkey="Dashboard" title="Dashboard">
+            //             <Dashboard />
+            //         </Tab>
+            //         <Tab eventKey="Billing" title="Billing">
+            //             <Billing />
+            //         </Tab>
+            //         <Tab eventKey="Account" title="Account">
+            //             <Account />
+            //         </Tab>
+            //         <Tab eventkey="Ordering" title="Ordering">
+            //             <Ordering />
+            //         </Tab>
+            //         <Tab eventKey="Tools" title='Tools'>
+            //             <Tools />
+            //         </Tab>
                     
-               </Tabs>  */}
-
+            //    </Tabs>  */}
+				<div>
 				<nav>
-					<ul>
+					<ul role="tablist" className="nav nav-tabs main-tabs">
 						<li>
 							{' '}
 							<a href="#">Dashboard</a>

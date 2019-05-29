@@ -9,9 +9,11 @@ import Quote from "../quote/Quote";
 
 
 class BasicServicesDemo extends React.Component {
+	
 	render() {
 		return (
 			<div>
+				{/* {this.props.OrderReason} */}
 				<OrderReason />
 				{/* <div className="spVideoInternet"> */}
 					{this.props.selectedOffers.map(offer => {

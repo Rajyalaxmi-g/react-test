@@ -15,6 +15,12 @@ class OfferParent extends React.Component {
 
         this.props.updateQuoteAction(selectedItems);
     };
+
+    showPhoneNumber = () => {
+		this.setState({
+			number: '618-555-6789'
+		});
+	};
     render() {
 		console.log(this.props);
 		
@@ -31,23 +37,23 @@ class OfferParent extends React.Component {
 		if (label.includes("Internet")) serviceGroup = this.props.basicServices[1].serviceName;		
 
         return (
-            <div class="spParent" style={{ marginLeft: leftMargin }}>
-                <div class="spVHeaderIcon">
-                    <span class="fa fa-minus-square-o fa-lg" />
+            <div className="spParent" style={{ marginLeft: leftMargin }}>
+                <div className="spVHeaderIcon">
+                    <i className="fa fa-minus-square-o fa-lg" />
                 </div>
-                <div class="spVHeaderLabel">
-                    <div class="form-group">
-                        <div class="formGroupStyle">
-                            <div class="checkboxStyle">
+                <div className="spVHeaderLabel">
+                    <div className="form-group">
+                        <div className="formGroupStyle">
+                            <div className="checkboxStyle">
                                 <span>
                                     <input
-                                        class="checkboxIcon"
+                                        className="checkboxIcon"
                                         type="checkbox"
                                         disabled={isDefault}
                                         onClick={this.checkboxClickHandler}
                                         value={`${serviceGroup}-${label}-${price}`}
                                     />
-                                    <span class="checkboxLabel">{label}</span>
+                                    <span className="checkboxLabel">{label}</span>
                                 </span>
                             </div>
                         </div>
