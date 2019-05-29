@@ -8,6 +8,7 @@ import Table from './basicServices/Table';
 import BasicServicesDemo from './basicServices/BasicServicesDemo';
 import Quote from './quote/Quote';
 import ExpandCollapse from './basicServices/ExpandCollapse';
+import { offers } from '../constants/offers';
 //import "react-checkbox-tree/lib/react-checkbox-tree.css";
 //import CheckboxTree from "react-checkbox-tree";
 
@@ -42,6 +43,7 @@ class OfferSelection extends React.Component {
 			primaryphone: '',
 			invalidNo: false,
 			errors: {},
+			offers: offers,
 			tooltiptext: '',
 			orderReason: '',
 			phonesArray: [
@@ -403,7 +405,7 @@ class OfferSelection extends React.Component {
 		});
 	};
 
-	canBeSubmitted = () => {
+	isOfferSelectionFormValid = () => {
 		const errors = this.Validate(
 		  this.state.firstname,
 		  this.state.lastname,
@@ -896,6 +898,16 @@ class OfferSelection extends React.Component {
 		}
 	};
 	render() {
+		const { firstname, lastname, isMobile, selectedOffers, currentTab } = this.state;
+		const isOfferSelectionFormValid = firstname !== '' && lastname !== '' && isMobile !== '' && selectedOffers.length !== 0;
+		const shouldEnableNextBtn = {
+			'offerHeader': isOfferSelectionFormValid,
+			'basicServices': true,
+			'additionalServices': true
+		}[currentTab];
+		console.log(shouldEnableNextBtn);
+		
+
 		console.log('state :', this.state);
 		return (
 			// <div className="outerRim tab-content container-fluid tabsContent">
@@ -948,6 +960,7 @@ class OfferSelection extends React.Component {
 												onClick={this.handleNextBtnClick}
 												className="btn btn-success"
 												type="button"
+												disabled={!shouldEnableNextBtn}
 											>
 												Next
 											</button>
@@ -960,11 +973,14 @@ class OfferSelection extends React.Component {
 									<div className="quoteHeader row">
 										<span>Quote Summary</span>
 									</div>
-									{/* <div className="quoteSection row">
-					<div className="row">
-						<Quote />
-					</div>
-				</div> */}
+									{
+										currentTab !== 'offerHeader' && 
+										<div className="quoteSection row">
+											<div className="row">
+												<Quote />
+											</div>
+										</div>
+									}
 								</div>
 							</div>
 						</div>
