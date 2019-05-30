@@ -8,9 +8,7 @@ import OfferParent from "./OfferParent";
 var currentService;
 export default class OfferDetails extends React.Component {
     render() {
-        console.log("this.props>offer = ", this.props);
-        console.log("hello from basic servicessssssssssssssss");
-        console.log(this.props.updateQuote);
+
 
         return (
             <div className="spVideoInternet">

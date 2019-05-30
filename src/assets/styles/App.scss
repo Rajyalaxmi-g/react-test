@@ -311,6 +311,17 @@ input.form-control {
 	width: 200%;
 	display: inline-block;
 }
+
+.formReasonStyle.has-error {
+	label {
+		color: red;
+		font-weight: 500;
+	}
+	select {
+		outline-color: red;
+	}
+}
+
 .multiselectComponent {
 	width: 80%;
 }

@@ -1,7 +1,17 @@
 import React from 'react';
+import Table from '../basicServices/Table';
 import { connect } from 'react-redux';
 
 class OfferHeader extends React.Component {
+	state = {
+		number: ''
+	}
+
+	showPhoneNumber = () => {
+		this.setState({
+			number: '618-555-6789'
+		});
+	};
 	
 	render() {
 		const { selectedItems } = this.props.quote;
@@ -17,6 +27,9 @@ class OfferHeader extends React.Component {
 			shouldUpdatePrice = itemArr.includes(serviceName);	
 			if (shouldUpdatePrice) computedPrice = computedPrice + Number(itemArr[2].slice(1));
 		})		
+		const bgcolor = {
+		backgroundColor : "#7cb30f"
+	};
 
 		return (
 			<div className="spVHeader">
@@ -33,6 +46,12 @@ class OfferHeader extends React.Component {
 				<div className="spVHeaderPrice">
 					<span className="spVHeaderParentPriceStyle">${computedPrice.toFixed(2)}</span>
 				</div>
+				{serviceName === 'Spectrum Voice' && <>
+				Host Phone: {this.state.number}
+										<button style={bgcolor} onClick={this.showPhoneNumber}>One Click Host</button>	
+										<Table />
+				</>
+			}
 			</div>
 		);
 	}
