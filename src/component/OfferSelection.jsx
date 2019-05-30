@@ -9,6 +9,7 @@ import BasicServicesDemo from './basicServices/BasicServicesDemo';
 import Quote from './quote/Quote';
 import ExpandCollapse from './basicServices/ExpandCollapse';
 import { offers } from '../constants/offers';
+import Offers from "./Offers";
 //import "react-checkbox-tree/lib/react-checkbox-tree.css";
 //import CheckboxTree from "react-checkbox-tree";
 
@@ -417,7 +418,7 @@ class OfferSelection extends React.Component {
 	};
 	offerHeader = () => {
 		return (
-			<div id="offer-selection">
+			// <div id="offer-selection">
 				<div className="leftScreen">
 					<div>
 						<div className="innerBox panel panel-default">
@@ -820,9 +821,9 @@ class OfferSelection extends React.Component {
 								</fieldset>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
+				 	</div>
+				 </div>
+			// </div>
 		);
 	};
 	
@@ -910,13 +911,15 @@ class OfferSelection extends React.Component {
 
 		console.log('state :', this.state);
 		return (
-			// <div className="outerRim tab-content container-fluid tabsContent">
-				<div className="innerScreen tab-pane active" role="tabpanel">
-					<div className="container-fluid">
-						<div className="tab-row-height row">
+			 //<div className="outerRim tab-content container-fluid tabsContent">
+				//  <div className="innerScreen tab-pane active" role="tabpanel">
+				 	// <div className="container-fluid">
+				 		// <div className="tab-row-height row">
+				<div>
 							<div className="col-sm-9 col-xs-12">
 								<div className="tab-col modal-container panel panel-default">
 									<div className="panel-body">
+										<div>
 										<nav className="collapse in" dimension="height">
 											<ul className="nav nav-pills nav-justified">
 												<li
@@ -941,13 +944,14 @@ class OfferSelection extends React.Component {
 												)}
 											</ul>
 										</nav>
+										</div>
 										{this.state.currentTab === 'offerHeader' && this.offerHeader()}
+										{/* {this.state.currentTab === 'offerHeader' && <Offers />} */}
 										{this.state.currentTab === 'basicServices' && this.basicServices()}
 										<div className="buttonGroupLeft">
 											<button disabled="" type="submit" className="btn btn-default disabled">
 												Back
 											</button>
-
 											<button className="clearOrder btn btn-default" type="button">
 												Clear Order
 											</button>
@@ -983,9 +987,10 @@ class OfferSelection extends React.Component {
 									}
 								</div>
 							</div>
-						</div>
-					</div>
 				</div>
+					 	// </div>
+				 	// </div>
+				//  </div>
 			// </div>
 		);
 	}

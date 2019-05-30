@@ -46,8 +46,22 @@ class App extends Component {
 								<div>
 									
 										<Nav />
-								<div className="outerRim tab-content container-fluid tabsContent">	
-									<OfferSelection updateQuote={this.props.updateQuoteAction} />
+								<div className="outerRim tab-content container-fluid tabsContent">
+									<div className="innerScreen tab-pane active" role="tabpanel">
+										<div className="container-fluid">
+											<div className="tab-row-height row">
+											{/* <div className="leftScreen">
+												<div> */}
+													{/* <div className="innerBox panel panel-default">
+														<div className="panel-body">	 */}
+												<OfferSelection updateQuote={this.props.updateQuoteAction} />
+												{/* </div>
+												</div> */}
+												{/* </div>
+												</div> */}
+											</div>
+										</div>
+									</div>
 								</div>
 								</div>
 							</div>	
