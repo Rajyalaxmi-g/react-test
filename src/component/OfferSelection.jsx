@@ -189,25 +189,6 @@ class OfferSelection extends React.Component {
 							}
 						]
 					},
-					{
-						id: 9,
-						type: 'AddOn',
-						offerName: 'Voice Bundled (9) SPP 2.0 #2755393 NC',
-						price: '$9.99',
-						showCart: true,
-						basicServices: [
-							{
-								serviceName: 'Spectrum Voice',
-								price: '$9.99',
-								services: [
-									{
-										label: 'Spectrum Voice Primary Line',
-										price: '$9.99',
-									}
-								]
-							}
-						]
-					},
 				{
 					id: 5,
 					type: 'Promotional',
@@ -246,7 +227,19 @@ class OfferSelection extends React.Component {
 					type: 'AddOn',
 					offerName: 'Voice Bundled (9) SPP 2.0 #2755393 NC',
 					price: '$9.99',
-					showCart: true
+					showCart: true,
+					basicServices: [
+						{
+							serviceName: 'Spectrum Voice',
+							price: '$9.99',
+							services: [
+								{
+									label: 'Spectrum Voice Primary Line',
+									price: '$9.99'
+								}
+							]
+						}
+					]
 				},
 				{
 					id: 10,
@@ -394,17 +387,35 @@ class OfferSelection extends React.Component {
 
 	addOffer = offer => {
 		offer.showCart = false;
+		// console.log(offer);
+		const { selectedOffers } = this.state;
+
+		// console.log(selectedOffers);
+		
+// if (selectedOffers.length > 0) {
+// 	selectedOffers.push (
+// 		selectedOffers.splice(
+// 			selectedOffers.findIndex(
+// 				obj => obj.type === 'AddOn'
+// 			), 1
+// 		)[0]
+// 	)
+// }
+
+// 		console.log(selectedOffers);
+
+		
 		this.setState({
-			selectedOffers: [...this.state.selectedOffers, offer],
+			selectedOffers: [ ...selectedOffers, offer],
 			offersTable: this.state.offersTable
 		});
 	};
 
-	showPhoneNumber = () => {
-		this.setState({
-			number: '618-555-6789'
-		});
-	};
+	// showPhoneNumber = () => {
+	// 	this.setState({
+	// 		number: '618-555-6789'
+	// 	});
+	// };
 
 	isOfferSelectionFormValid = () => {
 		const errors = this.Validate(
@@ -841,14 +852,14 @@ class OfferSelection extends React.Component {
 						<div>
 							{/* <div>
 								
-								{
+								{/* {
 									<div>
 										Host Phone: {this.state.number}
 										<button style={bgcolor} onClick={this.showPhoneNumber}>One Click Host</button>
 
 										{localStorage.setItem('hostPhone', this.state.number)}
 									</div>
-								}
+								} */}
 
 							</div> */}
 							{/* <div>
@@ -899,15 +910,14 @@ class OfferSelection extends React.Component {
 		}
 	};
 	render() {
-		const { firstname, lastname, isMobile, selectedOffers, currentTab } = this.state;
-		const isOfferSelectionFormValid = firstname !== '' && lastname !== '' && isMobile !== '' && selectedOffers.length !== 0;
+		const { firstname, lastname, isMobile, selectedOffers, primaryphone, errors, currentTab } = this.state;
+
+		const isOfferSelectionFormValid = firstname !== '' && lastname !== '' && primaryphone !== '' && !errors.primaryphone && selectedOffers.length !== 0;
 		const shouldEnableNextBtn = {
 			'offerHeader': isOfferSelectionFormValid,
 			'basicServices': true,
 			'additionalServices': true
 		}[currentTab];
-		console.log(shouldEnableNextBtn);
-		
 
 		console.log('state :', this.state);
 		return (
