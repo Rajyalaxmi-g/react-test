@@ -14,6 +14,7 @@ class OfferHeader extends React.Component {
 	};
 	
 	render() {
+		
 		const { selectedItems } = this.props.quote;
 		
 		const serviceName = this.props.service && this.props.service.serviceName;
