@@ -1,6 +1,7 @@
 import React from 'react';
 import QuoteOfferHeader from './QuoteOfferHeader';
 import QuoteOfferVideo from './QuoteOfferVideo';
+import "../../assets/styles/quote.css";
 
 class Quote extends React.Component {
 	render() {
@@ -31,7 +32,7 @@ class Quote extends React.Component {
 
 						<div>
 							<div className="quoteOffer">
-								<div className="">
+								<div className="row">
 									<div className="col-xs-12">
 										<QuoteOfferHeader />
 										<div className="quoteLobPlay1">

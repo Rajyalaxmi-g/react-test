@@ -839,7 +839,7 @@ class OfferSelection extends React.Component {
 						<BasicServicesDemo updateQuote={this.props.updateQuote} selectedOffers={this.state.selectedOffers} />
 
 						<div>
-							<div>
+							{/* <div>
 								
 								{
 									<div>
@@ -850,14 +850,14 @@ class OfferSelection extends React.Component {
 									</div>
 								}
 
-							</div>
+							</div> */}
 							{/* <div>
 								<input type="text" disabled value={localStorage.getItem('fullName')} />
 							</div>
 							<div>
 								<input type="text" value={localStorage.getItem('hostPhone')} />
 							</div>  */}
-							<Table />
+							{/* <Table /> */}
 						</div>
 					</div>
 				</div>

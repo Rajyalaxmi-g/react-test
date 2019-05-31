@@ -34,7 +34,8 @@ class OfferParent extends React.Component {
 		let serviceGroup = '';
 
 		if (label.includes("TV")) serviceGroup = this.props.basicServices[0].serviceName;
-		if (label.includes("Internet")) serviceGroup = this.props.basicServices[1].serviceName;		
+        if (label.includes("Internet")) serviceGroup = this.props.basicServices[1].serviceName;	
+        //if (label.includes("Voice")) serviceGroup = ;
 
         return (
             <div className="spParent" style={{ marginLeft: leftMargin }}>
