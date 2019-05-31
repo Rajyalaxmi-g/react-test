@@ -873,15 +873,7 @@ class OfferSelection extends React.Component {
 					</div>
 				</div>
 
-				{/* <CheckboxTree
-          nodes={nodes}
-          checked={this.state.checked}
-          expanded={this.state.expanded}
-          onCheck={checked => this.setState({ checked })}
-          onExpand={expanded => this.setState({ expanded })}
-          showNodeIcon={false}
-        /> */}
-			</div>
+				
 		);
 	};
 

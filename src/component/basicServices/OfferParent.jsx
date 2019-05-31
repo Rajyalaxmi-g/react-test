@@ -2,6 +2,7 @@ import React from "react";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {updateQuoteAction} from '../../actions/updateQuoteAction';
+import Table from "./Table";
 
 class OfferParent extends React.Component {
     checkboxClickHandler = e => {
@@ -63,7 +64,13 @@ class OfferParent extends React.Component {
                 <div class="spVHeaderPrice">
                     <span class="spVHeaderChildPriceStyle">{price}</span>
                 </div>
-            </div>
+            
+        {/* //    {serviceName === 'Spectrum Voice' && <>
+        //     Host Phone: {this.state.number} */}
+        
+										{/* <button style={bgcolor} onClick={this.showPhoneNumber}>One Click Host</button>	 */}
+										{/* <Table /> */}
+                                        </div>
         );
     }
 }
