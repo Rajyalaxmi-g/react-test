@@ -36,7 +36,7 @@ class OfferParent extends React.Component {
 
 		if (label.includes("TV")) serviceGroup = this.props.basicServices[0].serviceName;
         if (label.includes("Internet")) serviceGroup = this.props.basicServices[1].serviceName;	
-        //if (label.includes("Voice")) serviceGroup = ;
+        if (label.includes("Voice")) serviceGroup = this.props.basicServices;
 
         return (
             <div className="spParent" style={{ marginLeft: leftMargin }}>
@@ -64,13 +64,14 @@ class OfferParent extends React.Component {
                 <div class="spVHeaderPrice">
                     <span class="spVHeaderChildPriceStyle">{price}</span>
                 </div>
-            
-        {/* //    {serviceName === 'Spectrum Voice' && <>
-        //     Host Phone: {this.state.number} */}
+            </div>
+            // <>
+            // {serviceName === 'Spectrum Voice' && <>
+            //  Host Phone: {this.state.number} }
         
-										{/* <button style={bgcolor} onClick={this.showPhoneNumber}>One Click Host</button>	 */}
-										{/* <Table /> */}
-                                        </div>
+			// 							<button style={bgcolor} onClick={this.showPhoneNumber}>One Click Host</button>	
+			// 							<Table /> 
+            //  </>                           
         );
     }
 }

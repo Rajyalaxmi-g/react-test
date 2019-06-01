@@ -10,6 +10,7 @@ import Quote from './quote/Quote';
 import ExpandCollapse from './basicServices/ExpandCollapse';
 import { offers } from '../constants/offers';
 import Offers from "./Offers";
+import AdditionalServicesDemo from './additionalServices/AdditionalServicesDemo';
 //import "react-checkbox-tree/lib/react-checkbox-tree.css";
 //import CheckboxTree from "react-checkbox-tree";
 
@@ -34,7 +35,7 @@ class OfferSelection extends React.Component {
 			checked: [],
 			expanded: [],
 			navTabs: ['offerHeader', 'basicServices', 'additionalServices'],
-			tabsInView: ['offerHeader'],
+			tabsInView: ['additionalServices'],
 			currentTab: 'offerHeader',
 			firstname: '',
 			lastname: '',
@@ -112,83 +113,88 @@ class OfferSelection extends React.Component {
 			],
 			selectedOffers: [],
 			doublePlay: [
-					{
-						id: 4,
-						type: 'Promotional',
-						offerName: 'TV Select + Internet (44/44) SPP 2.0 #2748993 NC',
-						price: '$89.98',
-						showCart: true,
-						basicServices: [
-							{
-								serviceName: 'Spectrum Video',
-								price: '$56.98',
-								surcharge: {
-									label: 'Broadcast TV Surcharge',
-									price: '$11.99'
-								},
-								services: [
-									{
-										label: 'Spectrum TV',
-										level: 1,
-										price: '$0.00',
-										default: true,
-										children: [
-											{
-												label: 'Spectrum TV Select',
-												level: 2,
-												price: '$44.99',
-												default: true,
-												children: [
-													{
-														label: 'Spectrum TV Silver',
-														level: 3,
-														price: '$20.00',
-														children: [
-															{
-																label: 'Spectrum TV Gold',
-																level: 4,
-																price: '$20.00'
-															}
-														]
-													}
-												]
-											}
-										]
-									}
-								]
+				{
+					id: 4,
+					type: 'Promotional',
+					offerName: 'TV Select + Internet (44/44) SPP 2.0 #2748993 NC',
+					price: '$89.98',
+					showCart: true,
+					basicServices: [
+						{
+							serviceName: 'Spectrum Video',
+							price: '$56.98',
+							surcharge: {
+								label: 'Broadcast TV Surcharge',
+								price: '$11.99'
 							},
-							{
-								serviceName: 'Spectrum Internet',
-								price: '$44.99',
-								services: [
-									{
-										label: 'Spectrum Internet',
-										level: 1,
-										price: '$44.99',
-										default: true,
-										children: [
-											{
-												label: 'Spectrum Internet Plus',
-												level: 2,
-												price: '$0.00',
-												default: true
-											},
-											{
-												label: 'Spectrum Internet Ultra',
-												level: 2,
-												price: '$20.00'
-											},
-											{
-												label: 'Spectrum Internet Gig',
-												level: 2,
-												price: '$60.00'
-											}
-										]
-									}
-								]
-							}
-						]
-					},
+							quoteSummaryDefaults: [],
+							services: [
+								{
+									label: 'Spectrum TV',
+									level: 1,
+									price: '$0.00',
+									default: true,
+									children: [
+										{
+											label: 'Spectrum TV Select',
+											level: 2,
+											price: '$44.99',
+											default: true,
+											children: [
+												{
+													label: 'Spectrum TV Silver',
+													level: 3,
+													price: '$20.00',
+													children: [
+														{
+															label: 'Spectrum TV Gold',
+															level: 4,
+															price: '$20.00'
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							serviceName: 'Spectrum Internet',
+							price: '$44.99',
+							quoteSummaryDefaults: [
+								{ label: 'Spectrum Modem', price: '$0.00' },
+								{ label: 'Spectrum Internet', price: '$44.99' }
+							],
+							services: [
+								{
+									label: 'Spectrum Internet',
+									level: 1,
+									price: '$44.99',
+									default: true,
+									children: [
+										{
+											label: 'Spectrum Internet Plus',
+											level: 2,
+											price: '$0.00',
+											default: true
+										},
+										{
+											label: 'Spectrum Internet Ultra',
+											level: 2,
+											price: '$20.00'
+										},
+										{
+											label: 'Spectrum Internet Gig',
+											level: 2,
+											price: '$60.00'
+										}
+									]
+								}
+							]
+						}
+					]
+				},
 				{
 					id: 5,
 					type: 'Promotional',
@@ -872,8 +878,6 @@ class OfferSelection extends React.Component {
 						</div>
 					</div>
 				</div>
-
-				
 		);
 	};
 
@@ -943,13 +947,27 @@ class OfferSelection extends React.Component {
 													>
 														<span>Basic Services ></span>
 													</li>
-												)}
+													
+													)}
+													{this.state.tabsInView.includes('additionalServices') && (
+														<li
+														className={`offerHeader ${this.state.currentTab ===
+															'additionalServices' && 'active'}`}
+														role="presentation"
+														id="basicServices"
+														onClick={this.handleNavClick}
+													>
+														<span>Additional Services ></span>
+														
+														</li>
+													)} 
 											</ul>
 										</nav>
 										</div>
 										{this.state.currentTab === 'offerHeader' && this.offerHeader()}
 										{/* {this.state.currentTab === 'offerHeader' && <Offers />} */}
 										{this.state.currentTab === 'basicServices' && this.basicServices()}
+										{this.state.currentTab === 'additionalServices' && <AdditionalServicesDemo />}
 										<div className="buttonGroupLeft">
 											<button disabled="" type="submit" className="btn btn-default disabled">
 												Back
@@ -983,7 +1001,7 @@ class OfferSelection extends React.Component {
 										currentTab !== 'offerHeader' && 
 										<div className="quoteSection row">
 											<div className="row">
-												<Quote />
+												<Quote selectedOffers={this.state.selectedOffers} />
 											</div>
 										</div>
 									}

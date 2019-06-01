@@ -25,6 +25,7 @@
 }
 
 .quoteLobPlay1 {
+	display: flow-root;
 	padding-top: 5px;
 	padding-right: 10px;
 	padding-left: 10px;
