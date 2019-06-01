@@ -14,7 +14,6 @@ class OfferHeader extends React.Component {
 	};
 	
 	render() {
-		
 		const { selectedItems } = this.props.quote;
 		
 		const serviceName = this.props.service && this.props.service.serviceName;
@@ -47,12 +46,17 @@ class OfferHeader extends React.Component {
 				<div className="spVHeaderPrice">
 					<span className="spVHeaderParentPriceStyle">${computedPrice.toFixed(2)}</span>
 				</div>
-				{serviceName === 'Spectrum Voice' && <>
-				Host Phone: {this.state.number}
-										<button style={bgcolor} onClick={this.showPhoneNumber}>One Click Host</button>	
-										<Table />
-				</>
-			}
+				{
+					serviceName === "Spectrum Voice" && (
+						<>
+							Host Phone: {this.state.number}
+							<button style={bgcolor} onClick={this.showPhoneNumber}>
+								One Click Host
+							</button>
+							<Table />
+						</>
+					)
+				}
 			</div>
 		);
 	}

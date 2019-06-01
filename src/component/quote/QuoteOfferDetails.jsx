@@ -1,25 +1,16 @@
 import React from "react";
-import { connect } from 'react-redux';
 
-function QuoteOfferDetails({ selectedOffer, quote }) {
-	const { selectedItems } = quote;
-	console.log(selectedItems);
-	
-
-    console.log("quote offer details --------------");
-
-    console.log(selectedOffer);
-
+export default function QuoteOfferDetails({ selectedOffer, quote }) {
+    const { selectedItems } = quote;
     const flattenedSelectedOffer = [];
+
     selectedOffer.basicServices.map(basicService => {
         let obj = {};
         obj.serviceName = basicService.serviceName;
         obj.price = basicService.price;
         let serviceItems = [];
 
-        basicService.quoteSummaryDefaults &&
-            basicService.quoteSummaryDefaults.length > 0 &&
-            serviceItems.push.apply(serviceItems, basicService.quoteSummaryDefaults);
+        basicService.quoteSummaryDefaults && basicService.quoteSummaryDefaults.length > 0 && serviceItems.push.apply(serviceItems, basicService.quoteSummaryDefaults);
 
         basicService.services.map(service => {
             // if (service.default) {
@@ -45,15 +36,14 @@ function QuoteOfferDetails({ selectedOffer, quote }) {
                 });
         });
 
-		basicService.surcharge && serviceItems.push(basicService.surcharge);
-		
-		selectedItems.map(item => {
-			const arr = item.split('-');
-			if (arr.includes(basicService.serviceName)) {
-				serviceItems.push({ label: arr[1], price: arr[2] })
-			}
-		})
+        basicService.surcharge && serviceItems.push(basicService.surcharge);
 
+        selectedItems.map(item => {
+            const arr = item.split("-");
+            if (arr.includes(basicService.serviceName)) {
+                serviceItems.push({ label: arr[1], price: arr[2] });
+            }
+        });
 
         obj.serviceItems = serviceItems;
 
@@ -65,6 +55,12 @@ function QuoteOfferDetails({ selectedOffer, quote }) {
     return (
         <>
             {flattenedSelectedOffer.map(offer => {
+                let computedOfferPrice = 0;
+                offer.serviceItems.map(item => {
+                    let price = Number(item.price.substr(1));
+                    computedOfferPrice += price;
+                });
+
                 return (
                     <div className="quoteLobPlay1">
                         <div className="row quoteLobPlay1Style">
@@ -73,30 +69,28 @@ function QuoteOfferDetails({ selectedOffer, quote }) {
                                     {/* <i className="material-icons__material-icons___2FaZp">live_tv</i> */}
                                     <span>{offer.serviceName}</span>
                                 </div>
-                                <span>{offer.price}</span>
+                                <span>${(computedOfferPrice && computedOfferPrice.toFixed(2)) || offer.price.substr(1)}</span>
                             </div>
                         </div>
                         <div>
-							{offer.serviceItems.map(item => {
-								return(
-									<>
-									<div className="col-xs-12 lobPlay1DivStyle">
-										<div className="lobplayLabel">
-											<span className="fa fa-plus iconStyle" />
-											<span className="labelStyle">{item.label}</span>
-										</div>
-										<div className="lobplayPrice">
-											<span>{item.price}</span>
-										</div>
-									</div>
-			                        <hr />
-</>
-								)
-							})}
-                            
+                            {offer.serviceItems.map(item => {
+                                return (
+                                    <>
+                                        <div className="col-xs-12 lobPlay1DivStyle">
+                                            <div className="lobplayLabel">
+                                                <span className="fa fa-plus iconStyle" />
+                                                <span className="labelStyle">{item.label}</span>
+                                            </div>
+                                            <div className="lobplayPrice">
+                                                <span>{item.price}</span>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                    </>
+                                );
+                            })}
                         </div>
                         <div />
-
                     </div>
                 );
             })}
@@ -105,8 +99,3 @@ function QuoteOfferDetails({ selectedOffer, quote }) {
 }
 
 
-const mapStateToProps = state => ({
-	...state
-});
-
-export default connect(mapStateToProps, null)(QuoteOfferDetails);

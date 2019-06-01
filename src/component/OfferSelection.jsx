@@ -35,8 +35,8 @@ class OfferSelection extends React.Component {
 			checked: [],
 			expanded: [],
 			navTabs: ['offerHeader', 'basicServices', 'additionalServices'],
-			tabsInView: ['additionalServices'],
-			currentTab: 'offerHeader',
+			tabsInView: ['offerHeader', 'basicServices'],
+			currentTab: 'basicServices',
 			firstname: '',
 			lastname: '',
 			isMobile: true,
@@ -111,7 +111,109 @@ class OfferSelection extends React.Component {
 					showCart: true
 				}
 			],
-			selectedOffers: [],
+			selectedOffers: [{
+				id: 4,
+				type: 'Promotional',
+				offerName: 'TV Select + Internet (44/44) SPP 2.0 #2748993 NC',
+				price: '$89.98',
+				showCart: true,
+				basicServices: [
+					{
+						serviceName: 'Spectrum Video',
+						price: '$56.98',
+						surcharge: {
+							label: 'Broadcast TV Surcharge',
+							price: '$11.99'
+						},
+						quoteSummaryDefaults: [],
+						services: [
+							{
+								label: 'Spectrum TV',
+								level: 1,
+								price: '$0.00',
+								default: true,
+								children: [
+									{
+										label: 'Spectrum TV Select',
+										level: 2,
+										price: '$44.99',
+										default: true,
+										children: [
+											{
+												label: 'Spectrum TV Silver',
+												level: 3,
+												price: '$20.00',
+												children: [
+													{
+														label: 'Spectrum TV Gold',
+														level: 4,
+														price: '$20.00'
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					},
+					{
+						serviceName: 'Spectrum Internet',
+						price: '$44.99',
+						quoteSummaryDefaults: [
+							{ label: 'Spectrum Modem', price: '$0.00' },
+							{ label: 'Spectrum Internet', price: '$44.99' }
+						],
+						services: [
+							{
+								label: 'Spectrum Internet',
+								level: 1,
+								price: '$44.99',
+								default: true,
+								children: [
+									{
+										label: 'Spectrum Internet Plus',
+										level: 2,
+										price: '$0.00',
+										default: true
+									},
+									{
+										label: 'Spectrum Internet Ultra',
+										level: 2,
+										price: '$20.00'
+									},
+									{
+										label: 'Spectrum Internet Gig',
+										level: 2,
+										price: '$60.00'
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				id: 9,
+				type: 'AddOn',
+				offerName: 'Voice Bundled (9) SPP 2.0 #2755393 NC',
+				price: '$9.99',
+				showCart: true,
+				basicServices: [
+					{
+						serviceName: 'Spectrum Voice',
+						price: '$9.99',
+						services: [
+							{
+								label: 'Spectrum Voice Primary Line',
+								default: true,
+								price: '$9.99'
+							}
+						]
+					}
+				]
+			}
+		],
 			doublePlay: [
 				{
 					id: 4,
@@ -949,7 +1051,7 @@ class OfferSelection extends React.Component {
 													</li>
 													
 													)}
-													{this.state.tabsInView.includes('additionalServices') && (
+													{/* {this.state.tabsInView.includes('additionalServices') && (
 														<li
 														className={`offerHeader ${this.state.currentTab ===
 															'additionalServices' && 'active'}`}
@@ -960,14 +1062,14 @@ class OfferSelection extends React.Component {
 														<span>Additional Services ></span>
 														
 														</li>
-													)} 
+													)}  */}
 											</ul>
 										</nav>
 										</div>
 										{this.state.currentTab === 'offerHeader' && this.offerHeader()}
 										{/* {this.state.currentTab === 'offerHeader' && <Offers />} */}
 										{this.state.currentTab === 'basicServices' && this.basicServices()}
-										{this.state.currentTab === 'additionalServices' && <AdditionalServicesDemo />}
+										{/* {this.state.currentTab === 'additionalServices' && <AdditionalServicesDemo />} */}
 										<div className="buttonGroupLeft">
 											<button disabled="" type="submit" className="btn btn-default disabled">
 												Back

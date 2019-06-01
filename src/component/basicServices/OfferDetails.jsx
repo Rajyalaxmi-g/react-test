@@ -4,6 +4,7 @@ import OfferSection from "./OfferSection";
 import OfferChildSection from "./OfferChildSection";
 import SelectedOffer from "./SelectedOffer";
 import OfferParent from "./OfferParent";
+import { connect } from "react-redux";
 
 var currentService;
 export default class OfferDetails extends React.Component {
