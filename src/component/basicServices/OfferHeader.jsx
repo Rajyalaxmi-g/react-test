@@ -46,6 +46,7 @@ class OfferHeader extends React.Component {
 				<div className="spVHeaderPrice">
 					<span className="spVHeaderParentPriceStyle">${computedPrice.toFixed(2)}</span>
 				</div>
+				<div>
 				{
 					serviceName === "Spectrum Voice" && (
 						<>
@@ -57,6 +58,7 @@ class OfferHeader extends React.Component {
 						</>
 					)
 				}
+				</div>
 			</div>
 		);
 	}

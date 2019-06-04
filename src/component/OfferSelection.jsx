@@ -11,20 +11,6 @@ import ExpandCollapse from './basicServices/ExpandCollapse';
 import { offers } from '../constants/offers';
 import Offers from "./Offers";
 import AdditionalServicesDemo from './additionalServices/AdditionalServicesDemo';
-//import "react-checkbox-tree/lib/react-checkbox-tree.css";
-//import CheckboxTree from "react-checkbox-tree";
-
-// const nodes = [
-//   {
-//     value: "mars",
-//     label: "Mars",
-//     children: [
-//       { value: "phobos", label: "Phobos" },
-//       { value: "deimos", label: "Deimos" }
-
-//     ]
-//   }
-// ];
 
 class OfferSelection extends React.Component {
 	constructor(props) {
@@ -35,8 +21,8 @@ class OfferSelection extends React.Component {
 			checked: [],
 			expanded: [],
 			navTabs: ['offerHeader', 'basicServices', 'additionalServices'],
-			tabsInView: ['offerHeader', 'basicServices'],
-			currentTab: 'basicServices',
+			tabsInView: ['offerHeader'],
+			currentTab: 'offerHeader',
 			firstname: '',
 			lastname: '',
 			isMobile: true,
@@ -111,109 +97,7 @@ class OfferSelection extends React.Component {
 					showCart: true
 				}
 			],
-			selectedOffers: [{
-				id: 4,
-				type: 'Promotional',
-				offerName: 'TV Select + Internet (44/44) SPP 2.0 #2748993 NC',
-				price: '$89.98',
-				showCart: true,
-				basicServices: [
-					{
-						serviceName: 'Spectrum Video',
-						price: '$56.98',
-						surcharge: {
-							label: 'Broadcast TV Surcharge',
-							price: '$11.99'
-						},
-						quoteSummaryDefaults: [],
-						services: [
-							{
-								label: 'Spectrum TV',
-								level: 1,
-								price: '$0.00',
-								default: true,
-								children: [
-									{
-										label: 'Spectrum TV Select',
-										level: 2,
-										price: '$44.99',
-										default: true,
-										children: [
-											{
-												label: 'Spectrum TV Silver',
-												level: 3,
-												price: '$20.00',
-												children: [
-													{
-														label: 'Spectrum TV Gold',
-														level: 4,
-														price: '$20.00'
-													}
-												]
-											}
-										]
-									}
-								]
-							}
-						]
-					},
-					{
-						serviceName: 'Spectrum Internet',
-						price: '$44.99',
-						quoteSummaryDefaults: [
-							{ label: 'Spectrum Modem', price: '$0.00' },
-							{ label: 'Spectrum Internet', price: '$44.99' }
-						],
-						services: [
-							{
-								label: 'Spectrum Internet',
-								level: 1,
-								price: '$44.99',
-								default: true,
-								children: [
-									{
-										label: 'Spectrum Internet Plus',
-										level: 2,
-										price: '$0.00',
-										default: true
-									},
-									{
-										label: 'Spectrum Internet Ultra',
-										level: 2,
-										price: '$20.00'
-									},
-									{
-										label: 'Spectrum Internet Gig',
-										level: 2,
-										price: '$60.00'
-									}
-								]
-							}
-						]
-					}
-				]
-			},
-			{
-				id: 9,
-				type: 'AddOn',
-				offerName: 'Voice Bundled (9) SPP 2.0 #2755393 NC',
-				price: '$9.99',
-				showCart: true,
-				basicServices: [
-					{
-						serviceName: 'Spectrum Voice',
-						price: '$9.99',
-						services: [
-							{
-								label: 'Spectrum Voice Primary Line',
-								default: true,
-								price: '$9.99'
-							}
-						]
-					}
-				]
-			}
-		],
+			selectedOffers: [],
 			doublePlay: [
 				{
 					id: 4,
@@ -969,7 +853,7 @@ class OfferSelection extends React.Component {
 									</div>
 								} */}
 
-							</div> */}
+							</div> 
 							{/* <div>
 								<input type="text" disabled value={localStorage.getItem('fullName')} />
 							</div>

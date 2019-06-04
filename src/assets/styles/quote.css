@@ -47,6 +47,7 @@
 	flex: 1 1 0%;
 	max-width: 200px;
 	float: left;
+	/* display: flow-root; */
 }
 
 .lobplayLabel span {
@@ -73,3 +74,5 @@ hr {
 	height: 1px;
 	background-color: rgb(209, 209, 209);
 }
+
+

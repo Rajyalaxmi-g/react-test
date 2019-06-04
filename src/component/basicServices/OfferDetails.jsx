@@ -5,14 +5,24 @@ import OfferChildSection from "./OfferChildSection";
 import SelectedOffer from "./SelectedOffer";
 import OfferParent from "./OfferParent";
 import { connect } from "react-redux";
+import {Collapse} from "react-bootstrap";
 
 var currentService;
 export default class OfferDetails extends React.Component {
-    render() {
+    constructor(props, context) {
+        super(props, context);
 
+
+        this.state = {
+            open: false,
+        };
+    }
+    render() {
+        const { open } = this.state;
 
         return (
-            <div className="spVideoInternet">
+            
+            <div className="spVideoInternet" onClick={() => this.setState({ open: !open})} aria-controls="collapse-div" aria-expanded={open}>
                 <div className="spSelectedOffer">
                     <div className="spVHeaderIcon">
                         <span className="fa fa-minus-square-o fa-lg" />
@@ -32,8 +42,8 @@ export default class OfferDetails extends React.Component {
                         </div>
                     </div>
                 </div>
-
-                <div className="spDoublePlay">
+                <Collapse in={this.state.open}>
+                <div className="spDoublePlay" id="collapse-div">
                     <div className="spVideoInternet">
                         {this.props.offer.basicServices.map(service => {
                             currentService = service;
@@ -112,6 +122,7 @@ export default class OfferDetails extends React.Component {
                         })}
                     </div>
                 </div>
+                </Collapse>
             </div>
         );
     }

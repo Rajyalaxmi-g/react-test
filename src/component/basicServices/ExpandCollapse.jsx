@@ -13,10 +13,10 @@ export default function ExpandCollapse() {
 	return (
 		<div style={divStyle}>
 			<div style={divStyle1}>
-				<button className="btn btn-default" type="button">
+				<button className="btn btn-default" type="button" id="collapse-div">
 					Expand All
 				</button>
-				<button className="btn btn-dafault" type="button">
+				<button className="btn btn-dafault" type="button" id="collapse-div">
 					Collapse All
 				</button>
 			</div>

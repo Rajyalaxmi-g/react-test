@@ -37,9 +37,7 @@ class App extends Component {
 								<span>No account selected</span>
 							</div>
 							</div>
-							{/* <Nav /> */}
-							{/* <Form /> */}
-							{/* <OfferSelection updateQuote={this.props.updateQuoteAction} /> */}
+						
 						</div>
 						<div className="inner-container">
 							<div className="tabSection">
