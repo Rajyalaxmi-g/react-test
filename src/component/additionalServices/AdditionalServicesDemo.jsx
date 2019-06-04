@@ -1,6 +1,5 @@
 import React from 'react';
 import ExpandCollapse from "../basicServices/ExpandCollapse";
-import BasicServicesDemo from '../basicServices/BasicServicesDemo';
 import {additionalServices} from "./additionalServices";
 import OfferHeader from '../basicServices/OfferHeader';
 import OfferDetails from '../basicServices/OfferDetails';
